@@ -1,0 +1,28 @@
+# Local configuration and credentials
+.env*
+.vercel/
+node_modules/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS, editor and temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.log
+*.tmp
+*.swp
+*~
+__pycache__/
+
+# Repository metadata and local helper scripts
+.git/
+*.py
+*.ps1
+*.cmd
+*.bat
+*.sh

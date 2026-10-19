@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2448ff">
+  <meta name="description" content="以地图和建筑照片校准的新濠影汇互动沙盘，探索亲子度假客群、旅程与营销组合。课程研究原型。">
+  <title>新濠影汇市场营销分析——以亲子度假市场为重点｜V3 互动展</title>
+  <link rel="icon" href="favicon.svg"><link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script><script defer src="geometry.js"></script><script defer src="scene.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到主要内容</a>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="新濠影汇营销研究，回到顶部"><span class="brand-mark">SC<span>03</span></span><span>STUDIO CITY<small>亲子度假 · 营销研究展</small></span></a>
+  <nav aria-label="研究章节"><a href="#study">研究</a><a href="#environment">环境</a><a href="#swot">SWOT</a><a href="#stp">STP</a><a href="#mix">4P</a><a href="#future">策略</a></nav>
+  <a class="header-link" href="#references">模型依据 <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+    <div class="hero-intro"><p class="eyebrow">ARCHITECTURE × FAMILY JOURNEY</p><span class="edition">INTERACTIVE EXHIBITION / V3</span></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="topic-tag">旅游市场行销 · 企业案例</p>
+        <h1 id="heroTitle">新濠影汇<br><span>市场营销<br>分析</span><i aria-hidden="true">✳</i></h1>
+        <p class="hero-subtitle">—— 以亲子度假市场为重点</p>
+        <p class="hero-description">从真实建筑关系出发，<br>把一座综合度假村，<br>读成一段家庭旅程。</p>
+        <a class="text-link" href="#study">选择出游家庭，重组旅程 <span aria-hidden="true">↓</span></a>
+        <div class="hero-notes"><span>01 / 看见空间</span><span>02 / 理解需求</span><span>03 / 检验建议</span></div>
+      </div>
+      <div class="exhibit" id="model" aria-labelledby="modelTitle">
+        <div class="exhibit-head"><div><span class="mini-label">EXHIBIT A</span><h2 id="modelTitle">一座度假村，多种家庭旅程。</h2></div><span class="render-badge" id="renderMode">正在准备场景</span></div>
+        <div class="layout-switch" role="group" aria-label="沙盘布局状态"><button type="button" data-layout="geo" aria-pressed="true">地理布局</button><button type="button" data-layout="explode" aria-pressed="false">业务拆解 <span aria-hidden="true">↗</span></button><span id="layoutNote">北向与相对位置经地图核对</span></div>
+        <div class="model-stage" id="modelStage">
+          <canvas id="scene" tabindex="0" aria-label="新濠影汇可交互建筑沙盘。拖动旋转，普通滚轮滚动页面；使用下方按钮或聚焦后按加号减号缩放，方向键旋转，Home复位。">浏览器无法显示画布，请使用下方部件按钮探索。</canvas>
+          <canvas id="routeOverlay" aria-hidden="true"></canvas>
+          <div class="labels-layer" id="sceneLabels" aria-label="沙盘建筑标签"></div>
+          <div class="plan-fallback" id="planFallback" hidden></div>
+          <div class="compass" aria-label="地图北向随视角旋转"><svg viewBox="0 0 70 70" aria-hidden="true"><circle cx="35" cy="35" r="29"/><g id="compassNeedle"><path d="M35 12 29 40 35 35 41 40Z"/><path class="south" d="M35 57 29 40 35 35 41 40Z"/></g></svg><b>N</b></div>
+          <span class="stage-caption" id="sceneCaption">地图校准的建筑示意 · 立面细部与高度经简化</span>
+        </div>
+        <div class="scene-toolbar" role="group" aria-label="沙盘视图与动画控制">
+          <button type="button" id="zoomOut" aria-label="缩小模型，键盘减号">− <span>缩小</span></button><button type="button" id="zoomIn" aria-label="放大模型，键盘加号">＋ <span>放大</span></button><button type="button" id="resetView">复位</button><button type="button" id="topView">俯视</button><button type="button" id="frontView">看中央开孔</button><button type="button" id="motionToggle" aria-pressed="false">舱体演示 <span aria-hidden="true">▶</span></button><button type="button" id="guidedTour" aria-pressed="false">沿路线导览 →</button>
+        </div>
+        <p class="model-help" id="modelHelp">拖动旋转 · 按钮 / 键盘 + − 缩放 · 普通滚动浏览页面。8 字轮体固定，演示仅移动观景厢。</p>
+      </div>
+    </div>
+    <div class="selection-panel">
+      <div class="selection-copy" aria-live="polite"><p class="mini-label" id="partKicker">BUILDING / 01</p><h3 id="partTitle">一期酒店</h3><p id="partCopy"></p><div class="source-inline"><span id="partEvidence"></span><a id="partSource" href="https://www.leighorange.com/project/studio-city/" target="_blank" rel="noopener">查看依据 ↗</a></div></div>
+      <div class="selection-menu"><span class="mini-label">选择建筑 / 业务触点</span><div class="part-buttons" id="partButtons" role="group" aria-label="选择建筑或业务区域"></div><p class="route-summary" id="routeSummary"></p><p class="selection-question" id="partQuestion"></p></div>
+    </div>
+  </section>
+
+  <section class="study section-pad" id="study" aria-labelledby="studyTitle">
+    <div class="section-top"><span class="section-number">01</span><span class="eyebrow">企业与研究问题</span><span class="section-side">THE FAMILY LENS</span></div>
+    <div class="two-col"><h2 id="studyTitle">同一座度假村，<br>家庭需要的<br><em>未必相同。</em></h2><div class="large-copy"><p>酒店、水上乐园、观景体验、餐饮和室内娱乐，组成了多个可衔接的触点。家庭真正要完成的任务，是在成员偏好、停留时间和参与规则之间做选择。</p><p class="research-question">研究问题：不同家庭结构与停留长度，是否需要不同的产品重点、信息表达和渠道衔接？</p><p class="fineprint">下列年龄区间是团队分析分组；是否适合参与具体项目，须核对官方年龄、身高和安全规则。</p></div></div>
+    <div class="fact-strip"><div><b>2,493</b><span>客房 · 公司概览口径</span></div><div><b>17</b><span>影汇之星观景厢</span></div><div><b>室内＋户外</b><span>水乐园分区须分别理解</span></div><a href="#references">公开来源与资料边界 ↗</a></div>
+    <div class="journey-lab"><div class="lab-heading"><span class="mini-label">TRY A DIFFERENT FAMILY</span><h3>这次，谁和谁一起出发？</h3><p>选择将同步沙盘高亮与路线、STP、4P 和策略行动。</p></div>
+      <div class="lab-controls"><div><span class="control-label">家庭结构 / 孩子年龄</span><div class="segmented" role="group" aria-label="家庭细分"><button type="button" data-segment="young" aria-pressed="false"><b>幼儿家庭</b><small>0–5岁 · 分析分组</small></button><button type="button" data-segment="school" aria-pressed="true"><b>学龄家庭</b><small>6–12岁 · 分析分组</small></button><button type="button" data-segment="multi" aria-pressed="false"><b>跨代同行</b><small>祖辈与孩子</small></button></div></div><div><span class="control-label">停留长度</span><div class="segmented stay-control" role="group" aria-label="停留长度"><button type="button" data-stay="day" aria-pressed="true"><b>一日体验</b><small>不过夜</small></button><button type="button" data-stay="overnight" aria-pressed="false"><b>留宿一晚</b><small>两日安排</small></button></div></div></div>
+      <div class="journey-results" aria-live="polite"><div><span>需求重点</span><b id="segmentNeed"></b></div><div><span>产品优先 · 团队建议</span><b id="segmentProduct"></b></div><div><span>定位陈述 · 待验证</span><b id="segmentPosition"></b></div></div>
+      <a class="text-link" href="#model">回到沙盘，查看新路线 ↑</a>
+    </div>
+  </section>
+
+  <section class="environment section-pad" id="environment" aria-labelledby="environmentTitle">
+    <div class="section-top"><span class="section-number">02</span><span class="eyebrow">宏观与微观环境</span><span class="section-side">CONTEXT BEFORE STRATEGY</span></div>
+    <div class="heading-row"><h2 id="environmentTitle">先把环境，<br>变成可回答的问题。</h2><div class="switcher" role="group" aria-label="切换环境层级"><button data-environment="macro" aria-pressed="true" type="button">宏观 PESTLE</button><button data-environment="micro" aria-pressed="false" type="button">微观参与者</button></div></div>
+    <div class="environment-body"><div><p class="mini-label" id="environmentKicker"></p><h3 id="environmentHeading"></h3><p id="environmentSummary"></p><a class="text-link" href="https://dataplus.macaotourism.gov.mo/?lang=S" target="_blank" rel="noopener">澳门旅游数据+ ↗</a></div><div id="environmentItems" class="environment-list"></div></div>
+    <p class="competition-note"><b>竞品比较口径</b> 同区综合度假村、家庭景点与单项体验，应在相同日期、家庭结构、停留长度和购买内容下比较。本页未填未经核实的价格、市场份额或销售成效。</p>
+  </section>
+
+  <section class="swot section-pad" id="swot" aria-labelledby="swotTitle"><div class="section-top"><span class="section-number">03</span><span class="eyebrow">SWOT</span><span class="section-side">FACTS / HYPOTHESES</span></div><h2 id="swotTitle">每一个判断，<br>都应有下一步证据。</h2><div class="swot-grid">
+    <article><span>S <small>公开资料</small></span><h3>多种非博彩体验同场</h3><p>公开产品覆盖酒店、影汇之星、现场演出场馆与室内外水乐园等触点。</p><details><summary>展开分析</summary><p>多产品并存是可观察条件；能否形成更合适的家庭组合，还需检验参与规则、时间衔接与购买路径。</p></details></article>
+    <article><span>W <small>工作假设</small></span><h3>信息选择成本可能偏高</h3><p>项目多，可能令家庭难以比较适用条件、行程安排与预订步骤。</p><details><summary>展开验证</summary><p>走查官方信息页面，访谈不同年龄家庭，记录查找规则、比较组合与跳转预订时遇到的阻力。</p></details></article>
+    <article><span>O <small>研究入口</small></span><h3>按停留行为细分</h3><p>旅游统计可提供客源、留宿/不过夜、逗留时间与酒店住客等研究维度。</p><details><summary>展开研究</summary><p>先确定同口径时间范围，再结合家庭调研；城市旅客统计不能直接代表本企业亲子客群。</p></details></article>
+    <article><span>T <small>工作假设</small></span><h3>替代选择分散家庭预算</h3><p>家庭可能比较其他住宿、景点和单项娱乐安排。</p><details><summary>展开验证</summary><p>在同一出游日期与家庭结构下整理竞品的包含内容、规则和家庭总支出，再讨论差异。</p></details></article>
+  </div></section>
+
+  <section class="stp section-pad" id="stp" aria-labelledby="stpTitle"><div class="section-top"><span class="section-number">04</span><span class="eyebrow">细分、目标选择与定位</span><span class="section-side">SEGMENT / TARGET / POSITION</span></div><div class="two-col"><h2 id="stpTitle">家庭，<br>不是单一市场。</h2><div><p class="mini-label" id="stpIndex"></p><h3 class="segment-name" id="stpName"></h3><p id="stpDescription"></p><dl class="stp-logic"><div><dt>需求假设</dt><dd id="stpNeed"></dd></div><div><dt>目标选择逻辑</dt><dd id="stpTarget"></dd></div></dl></div></div><div class="position-statement"><span>待验证的目标市场假设</span><p id="stpHypothesis"></p><small>需要产品适配、可触达性和实际出游意愿数据，才能判断投放优先级。</small></div></section>
+
+  <section class="mix section-pad" id="mix" aria-labelledby="mixTitle"><div class="section-top"><span class="section-number">05</span><span class="eyebrow">现行 4P 组合评估</span><span class="section-side">PUBLIC INFORMATION REVIEW</span></div><h2 id="mixTitle">先看公开产品，<br>再辨认信息缺口。</h2><div class="mix-grid">
+    <article><span>PRODUCT</span><h3>产品</h3><p>酒店与多种非博彩体验，提供组合讨论入口。</p><b>需走查：适用人群、参与规则与预订条件是否清楚？</b></article><article><span>PRICE</span><h3>价格</h3><p>本页不填房价、票价或折扣。</p><b>需核对：同日期家庭总价、包含项目与退改条款。</b></article><article><span>PLACE</span><h3>渠道</h3><p>企业与景点有官方信息入口。</p><b>需走查：从内容到官方预订，信息和规则是否连续？</b></article><article><span>PROMOTION</span><h3>传播</h3><p>团队示例不代表企业现行活动。</p><b>需核对：主题是否对应真实规则与当前可售产品？</b></article>
+  </div><div class="mix-proposal"><div><span class="mini-label">当前情境 / 组合草案</span><p id="liveMix"></p></div><dl><div><dt>产品</dt><dd id="proposalProduct"></dd></div><div><dt>价格</dt><dd id="proposalPrice"></dd></div><div><dt>渠道</dt><dd id="proposalPlace"></dd></div><div><dt>传播</dt><dd id="proposalPromotion"></dd></div></dl></div></section>
+
+  <section class="future section-pad" id="future" aria-labelledby="futureTitle"><div class="section-top"><span class="section-number">06</span><span class="eyebrow">未来策略与验证</span><span class="section-side">FROM PROPOSAL TO ACTION</span></div><div class="heading-row"><h2 id="futureTitle">选一条路径，<br>把建议落到行动。</h2><p>策略选择会同步重组沙盘路线、业务高亮、产品、渠道和执行步骤。</p></div><div class="strategy-options" role="group" aria-label="未来策略方案"><button type="button" data-strategy="journey" aria-pressed="true"><span>A</span><b>旅程模块化</b><small>从组合设计入手</small></button><button type="button" data-strategy="content" aria-pressed="false"><span>B</span><b>情境内容触达</b><small>从内容与渠道入手</small></button><button type="button" data-strategy="service" aria-pressed="false"><span>C</span><b>预订信息服务</b><small>从决策摩擦入手</small></button></div>
+    <div class="strategy-result" aria-live="polite"><div class="strategy-audience"><span>团队提议 · 非现行项目</span><b id="strategyAudience"></b><p id="sceneFeedback"></p><a href="#model">查看重组后的沙盘 ↑</a></div><div><dl><div><dt>建议产品</dt><dd id="strategyProduct"></dd></div><div><dt>建议渠道</dt><dd id="strategyChannel"></dd></div></dl><span class="control-label">行动步骤</span><ol id="strategyActions"></ol><p class="fineprint">观察点击、咨询与选择意向，是后续测试计划；不代表已有转化率或销售成效。</p></div></div>
+    <div class="research-tasks"><b>正式报告前补齐</b><span>同口径旅客数据</span><span>竞品对照</span><span>家庭访谈</span><span>最新规则与价格</span></div>
+  </section>
+
+  <section class="references section-pad" id="references" aria-labelledby="referencesTitle"><div class="section-top"><span class="section-number">↗</span><span class="eyebrow">来源与模型边界</span><span class="section-side">EVIDENCE BEHIND THE MODEL</span></div><div class="two-col"><h2 id="referencesTitle">形态有依据，<br>推断有边界。</h2><div><p>平面关系由 OpenStreetMap 一期酒店轮廓与北朝上卫星图交叉校准，建筑立面参考建筑师与酒店官方照片。二期塔基位置、建筑高度和细部经简化。</p><p>餐饮与娱乐使用区域标记，未编造独立建筑；酒店泳池与水乐园分别呈现。家庭细分、定位、路线和策略均是团队待验证的研究建议。</p><a class="text-link" href="REFERENCE.md" target="_blank">完整来源、相对位置与近似边界 ↗</a></div></div>
+    <details class="reference-gallery"><summary>查看实际核对的建筑照片、官方园区图与北向地图</summary><div class="reference-grid"><figure><img src="references/phase1-front.jpg" loading="lazy" width="2000" height="946" alt="建筑师官方一期照片：宽阔弧形酒店立面与高处竖向8字开孔"><figcaption>一期：中央竖向开孔、窗带和层叠冠部。<a href="https://www.leighorange.com/project/studio-city/" target="_blank" rel="noopener">Leigh &amp; Orange ↗</a></figcaption></figure><figure><img src="references/phase2.jpg" loading="lazy" width="2000" height="946" alt="建筑师官方二期照片：独立玻璃塔、棱面馆体及红紫滑道"><figcaption>二期：独立玻璃塔与棱面裙房。<a href="https://www.leighorange.com/project/studio-city-phase-2/" target="_blank" rel="noopener">Leigh &amp; Orange ↗</a></figcaption></figure><figure><img src="references/north-up-map.png" loading="lazy" width="1600" height="1350" alt="北朝上Esri卫星图叠加OpenStreetMap一期酒店轮廓及POI，显示一期东、二期西的相对关系"><figcaption>北朝上地图：珊瑚线为一期轮廓，蓝线为整体裙房。POI 不是塔中心；影像拍摄日期未知。<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" target="_blank" rel="noopener">Esri World Imagery ↗</a> · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors ↗</a></figcaption></figure><figure><img src="references/waterpark-map.webp" loading="lazy" width="1624" height="1220" alt="官方水乐园图，明确区分室内和户外，红紫Teleport Tower属于室内区"><figcaption>官方图：室内与户外分别识别；此图无北箭头。<a href="https://www.studiocity-macau.com/en/attractions/studio-city-water-park" target="_blank" rel="noopener">官方园区图 ↗</a></figcaption></figure></div></details>
+    <div class="source-links"><a href="https://ir.studiocity-macau.com/" target="_blank" rel="noopener">公司投资者关系 · 产品与客房资料 ↗</a><a href="https://www.studiocity-macau.com/sc/attractions/golden-reel" target="_blank" rel="noopener">影汇之星 · 17厢与130米所处高度 ↗</a><a href="https://dataplus.macaotourism.gov.mo/?lang=S" target="_blank" rel="noopener">澳门旅游数据+ ↗</a><a href="https://www.openstreetmap.org/way/389178768" target="_blank" rel="noopener">OpenStreetMap · 一期建筑轮廓 ↗</a><a href="evidence/v2-v3-comparison.png" target="_blank" rel="noopener">V2 / V3 实际模型对比图 ↗</a><a href="VALIDATION.md" target="_blank">交互核验与本机采样记录 ↗</a></div>
+    <details class="runtime-info"><summary>本机运行采样与无障碍选项</summary><p>默认按需绘制。可暂停观景厢演示；系统“减少动态效果”会关闭持续动画并立即切换拆解状态。WebGL 不可用时仍可选择与拆解二维平面图。</p><div class="runtime-actions"><button type="button" id="benchmark">采样5秒渲染节奏</button><button type="button" id="downloadScene">保存当前沙盘图</button><a href="?render=2d#model">查看二维模式 ↗</a></div><img id="sceneExportPreview" alt="当前沙盘实际绘制的导出预览" hidden><output id="runtimeOutput" aria-live="polite">准备读取本机绘制状态。</output><p class="fineprint">rAF 间隔只描述本次浏览器调度；JavaScript 提交耗时不包含 GPU 完成时间，不能代替跨设备帧率保证。</p></details>
+  </section>
+</main>
+<footer><a class="footer-brand" href="#top">STUDIO CITY / FAMILY JOURNEY</a><span>非官方课程研究 · V3 · 2026.10</span><a href="#top">回到顶部 ↑</a></footer>
+</body></html>
