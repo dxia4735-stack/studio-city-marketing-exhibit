@@ -26,3 +26,16 @@ __pycache__/
 *.cmd
 *.bat
 *.sh
+
+# Current-only release: historical assets and local helpers stay outside the deployment
+evidence/
+archive/
+tmp/
+*.cjs
+*compare*
+reel-review*
+geometry-old.js
+preview_server.py
+*.mp4
+*.pptx
+*.docx

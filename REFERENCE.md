@@ -1,22 +1,40 @@
-# V3 建筑与相对位置依据
+# V3.1 建筑、轨迹与相对位置依据
 
-研究日期：2026-10-19。模型为课堂研究沙盘，平面关系经过地图交叉核对，立面和高度经照片简化；不是测绘、施工模型或现场导航图。
+研究日期：2026-10-19；现场资料与轨迹更新：2026-10-22。模型为课堂研究沙盘，平面关系经过地图交叉核对，立面和高度经照片简化；不是测绘、施工模型或现场导航图。
+
+## 2026-10-22 现场资料指导的更新
+
+轨迹规则来自用户现场观察并已验收的修正版：17 厢保持竖直，沿同一条 8 字外缘连续绕行，腰部两支不交叉。四张现场照片提供金色三角桁架、圆形开孔、检修钢网及前后建筑关系；37.5 秒视频是建筑沙盘环拍，不是设备运行录像，不能独立证明真实轨迹、方向或速度。原始私人照片和视频未纳入网站发布包。
+
+| 实际建模改进 | 影像依据与近似边界 |
+|---|---|
+| 金色双层固定环、交错斜撑与检修格栅 | 现场第1张照片中可见环形桁架深度、三角支撑和旁侧钢网。模型简化了杆件数量、连接与检修平台。固定构件不随座舱移动。 |
+| 一期连续弧面、随弧面朝向的柱带与封闭侧背面 | 沙盘 6.25s、9.375s、31.25s 抽帧与原官方照片支持弧形翼楼；沿既有平面节点细化曲线，没有重排地图坐标。墙厚从 0.64 调为 0.82 模型单位，仅为视觉近似。 |
+| 2–3 层退台肩部与少量低面数圆顶帽饰 | 沙盘正面楼冠的高低变化和圆拱帽饰，用于改善剪影；未按真实尺寸逐件复原。 |
+| 长条屋顶浅折面、分区肋与少量天窗；水乐园遮阳伞 | 现场第2–4张照片与沙盘前后遮挡关系支持分层观察；地理位置仍沿用地图。屋面标高、接缝与伞位是概括示意。 |
+| 室内馆红紫管道保留为粗略示意 | 已保存的二期官方照片确实显示金色折面馆体上方的红紫外露管道；官方水乐园图支持项目归类。没有把这次沙盘画面当作新尺寸依据。 |
+
+绿色连续轨道与金色固定环分别建模。轨道采用 8 段 C1 Bézier、4096 段弧长表；17 厢等弧长间距。轨道平面 X=-0.68，原墙面约 X=-0.37；外挑用于让座舱在腰部墙面前通过，未声称这是实测安装距离。腰部轨道中心距 0.48 模型单位，座舱包围盒之间约留 0.32 单位。演示速度非实测速度。
+
+二维降级仍是北朝上的地理布局，影汇之星标记只表示 POI，不能当作正面轮轨。
 
 ## 实际查看的图像
 
 | 证据 | 实际观察与用途 | 来源 |
 |---|---|---|
 | 一期正面官方照片 `references/phase1-front.jpg` | 宽曲面/折线酒店翼楼；中央高处上下叠置的两处圆形开孔；金色8字轨道嵌在一期之间；密集窗带、竖向构件与Art Deco冠部。 | [Leigh & Orange 一期项目](https://www.leighorange.com/project/studio-city/) |
-| 二期日景 `references/phase2.jpg` | 两座独立玻璃塔、连续竖向线条、波折/退台冠部、浅色V形幕墙带；低矮金色棱面馆体与红紫外露管道。 | [Leigh & Orange 二期项目](https://www.leighorange.com/project/studio-city-phase-2/) |
+| 二期日景 `references/phase2.jpg` 与研究文件中的夜景 | 两座独立玻璃塔、连续竖向线条、波折/退台冠部、浅色V形幕墙带；低矮金色棱面馆体与红紫外露管道。 | [Leigh & Orange 二期项目](https://www.leighorange.com/project/studio-city-phase-2/) |
 | Marriott 官方航拍外观 | 同时看到一期竖向8字与两座现代塔，核对它们是独立建筑组。照片本身没有逐塔名称。 | [W Macau 官方照片库](https://www.marriott.com/en-us/hotels/mfmwh-w-macau-studio-city/photos/) |
 | 官方水乐园图 `references/waterpark-map.webp` | 明确室内/户外分区。红紫 Teleport Tower 属于室内；蓝青黄 Highpoint Twister、园林、河道与池面属于户外。该插图没有北箭头。 | [官方水乐园](https://www.studiocity-macau.com/en/attractions/studio-city-water-park) / [园区原图](https://www.studiocity-macau.com/assets/public/styles/large/public/2025-03/sc_wp_parkmap.jpg.webp) |
 | 官方销售手册，第11–12页 | 露天滑道与封闭的室内主题馆分别观察，辅助功能归类。 | [2025-09官方销售手册](https://www.studiocity-macau.com/assets/public/2025-09/SCsaleskit_ENversion-compressed.pdf) |
+
+原始研究记录位于项目的 `tmp/v3-reference-research/architecture-research.txt` 与 `map-research.txt`。`phase1-pool.jpg` 只是历史本地文件名，实际内容为一期夜景近照，本版没有把它当泳池证据。
 
 ## 地图步骤与北向证据
 
 已实际查看 Esri 北朝上卫星底图，并用原始 OSM XML 中的一期酒店轮廓生成叠图：`references/north-up-map.png`。图中珊瑚线是一期酒店 building:part，蓝线是整体建筑/裙房轮廓；它们不是同一个对象。
 
-- [OSM 原始地图API](https://api.openstreetmap.org/api/0.6/map?bbox=113.558,22.138,113.565,22.145)：原始数据包含地理坐标。
+- [OSM 原始地图API](https://api.openstreetmap.org/api/0.6/map?bbox=113.558,22.138,113.565,22.145)：本地保存 `osm-studio-city-bbox.xml`，包含地理坐标。
 - [一期酒店 way 389178768](https://www.openstreetmap.org/way/389178768)：经度113.5617320–113.5627901，纬度22.1401089–22.1419088。模型将该轮廓转换为相对米制平面，立面沿轮廓概括。
 - [整体建筑 way 389178769](https://www.openstreetmap.org/way/389178769) 是整个综合体的轮廓，不能当作某一座酒店塔。
 - [Esri World Imagery 服务](https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer)；[实际导出元数据](https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=113.5575,22.1385,113.5640,22.1430&bboxSR=4326&imageSR=4326&size=1600,1200&format=jpg&f=pjson)。实际范围经度113.5575–113.5640、纬度22.1383125–22.1431875，1600×1200；北向上、东向右。服务为匹配长宽比扩展了请求范围，因此采用返回元数据，而非只抄请求框。
@@ -40,6 +58,8 @@ OSM 的 Golden Reel POI 为(22.1410296,113.5618494)，本版以此作为平面�
 - 餐饮与娱乐是综合体内部功能。两处标记仅提示研究触点，不新增真实独立建筑；不可用于现场导航。
 - “业务拆解”施加分析用位移；“地理布局”复原参考相对位置。二者在画面中明确标示。
 - “看中央开孔”是一期构造特写，临时隐藏其他建筑，让贯通开孔与17厢清楚可见；不是声称现场视线无遮挡，复位恢复全部地理上下文。
+
+Google Maps、OSM主页、澳门官方地图和Mapcarta交互页在研究时未能稳定通过本机内嵌浏览器访问。没有修改网络设置；改用成功取得的公开OSM地理数据与Esri地图导出，并实际查看图像与叠图。搜索摘要不作为已看图证据。
 
 ## 公开事实与研究建议
 

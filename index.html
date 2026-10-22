@@ -4,20 +4,20 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#2448ff">
   <meta name="description" content="以地图和建筑照片校准的新濠影汇互动沙盘，探索亲子度假客群、旅程与营销组合。课程研究原型。">
-  <title>新濠影汇市场营销分析——以亲子度假市场为重点｜V3 互动展</title>
+  <title>新濠影汇市场营销分析——以亲子度假市场为重点｜V3.1 互动展</title>
   <link rel="icon" href="favicon.svg"><link rel="stylesheet" href="styles.css">
-  <script defer src="data.js"></script><script defer src="geometry.js"></script><script defer src="scene.js"></script><script defer src="app.js"></script>
+  <script defer src="data.js"></script><script defer src="reel-path.js"></script><script defer src="geometry.js"></script><script defer src="scene.js"></script><script defer src="app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">跳转到主要内容</a>
 <header class="site-header">
   <a class="brand" href="#top" aria-label="新濠影汇营销研究，回到顶部"><span class="brand-mark">SC<span>03</span></span><span>STUDIO CITY<small>亲子度假 · 营销研究展</small></span></a>
   <nav aria-label="研究章节"><a href="#study">研究</a><a href="#environment">环境</a><a href="#swot">SWOT</a><a href="#stp">STP</a><a href="#mix">4P</a><a href="#future">策略</a></nav>
-  <a class="header-link" href="#references">模型依据 <span aria-hidden="true">↗</span></a>
+  <a class="header-link" href="#references">模型依据 ↗</a>
 </header>
 <main id="main">
   <section class="hero" id="top" aria-labelledby="heroTitle">
-    <div class="hero-intro"><p class="eyebrow">ARCHITECTURE × FAMILY JOURNEY</p><span class="edition">INTERACTIVE EXHIBITION / V3</span></div>
+    <div class="hero-intro"><p class="eyebrow">ARCHITECTURE × FAMILY JOURNEY</p><span class="edition">INTERACTIVE EXHIBITION / V3.1</span></div>
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="topic-tag">旅游市场行销 · 企业案例</p>
@@ -39,9 +39,9 @@
           <span class="stage-caption" id="sceneCaption">地图校准的建筑示意 · 立面细部与高度经简化</span>
         </div>
         <div class="scene-toolbar" role="group" aria-label="沙盘视图与动画控制">
-          <button type="button" id="zoomOut" aria-label="缩小模型，键盘减号">− <span>缩小</span></button><button type="button" id="zoomIn" aria-label="放大模型，键盘加号">＋ <span>放大</span></button><button type="button" id="resetView">复位</button><button type="button" id="topView">俯视</button><button type="button" id="frontView">看中央开孔</button><button type="button" id="motionToggle" aria-pressed="false">舱体演示 <span aria-hidden="true">▶</span></button><button type="button" id="guidedTour" aria-pressed="false">沿路线导览 →</button>
+          <button type="button" id="zoomOut" aria-label="缩小模型，键盘减号">− <span>缩小</span></button><button type="button" id="zoomIn" aria-label="放大模型，键盘加号">＋ <span>放大</span></button><button type="button" id="resetView">复位</button><button type="button" id="topView">俯视</button><button type="button" id="frontView">看8字轨迹</button><button type="button" id="motionToggle" aria-pressed="false">舱体演示 <span aria-hidden="true">▶</span></button><button type="button" id="guidedTour" aria-pressed="false">沿路线导览 →</button>
         </div>
-        <p class="model-help" id="modelHelp">拖动旋转 · 按钮 / 键盘 + − 缩放 · 普通滚动浏览页面。8 字轮体固定，演示仅移动观景厢。</p>
+        <details class="trajectory-controls"><summary>观察橙色01厢完整一周 · 演示速度</summary><div><button id="trackLap" type="button">从顶部播放一整圈</button><label for="trackProgress">进度</label><input id="trackProgress" type="range" min="0" max="1000" value="0"><output id="trackValue">0.0%</output><label>速度 <select id="trackSpeed"><option value=".000012">演示</option><option value=".000006">慢放</option></select></label></div><p>顶部 → 一侧上弧 → 同侧腰部 → 下弧 → 底部 → 另一侧腰部 → 顶部。普通滚动浏览页面，暂停请用上方舱体按钮。</p></details><p class="model-help" id="modelHelp">拖动旋转 · 按钮 / 键盘 + − 缩放 · 普通滚动浏览页面。17厢沿同一条不交叉8字外缘运行，座舱保持竖直。演示速度非实测。</p>
       </div>
     </div>
     <div class="selection-panel">
@@ -87,10 +87,10 @@
   </section>
 
   <section class="references section-pad" id="references" aria-labelledby="referencesTitle"><div class="section-top"><span class="section-number">↗</span><span class="eyebrow">来源与模型边界</span><span class="section-side">EVIDENCE BEHIND THE MODEL</span></div><div class="two-col"><h2 id="referencesTitle">形态有依据，<br>推断有边界。</h2><div><p>平面关系由 OpenStreetMap 一期酒店轮廓与北朝上卫星图交叉校准，建筑立面参考建筑师与酒店官方照片。二期塔基位置、建筑高度和细部经简化。</p><p>餐饮与娱乐使用区域标记，未编造独立建筑；酒店泳池与水乐园分别呈现。家庭细分、定位、路线和策略均是团队待验证的研究建议。</p><a class="text-link" href="REFERENCE.md" target="_blank">完整来源、相对位置与近似边界 ↗</a></div></div>
-    <details class="reference-gallery"><summary>查看实际核对的建筑照片、官方园区图与北向地图</summary><div class="reference-grid"><figure><img src="references/phase1-front.jpg" loading="lazy" width="2000" height="946" alt="建筑师官方一期照片：宽阔弧形酒店立面与高处竖向8字开孔"><figcaption>一期：中央竖向开孔、窗带和层叠冠部。<a href="https://www.leighorange.com/project/studio-city/" target="_blank" rel="noopener">Leigh &amp; Orange ↗</a></figcaption></figure><figure><img src="references/phase2.jpg" loading="lazy" width="2000" height="946" alt="建筑师官方二期照片：独立玻璃塔、棱面馆体及红紫滑道"><figcaption>二期：独立玻璃塔与棱面裙房。<a href="https://www.leighorange.com/project/studio-city-phase-2/" target="_blank" rel="noopener">Leigh &amp; Orange ↗</a></figcaption></figure><figure><img src="references/north-up-map.png" loading="lazy" width="1600" height="1350" alt="北朝上Esri卫星图叠加OpenStreetMap一期酒店轮廓及POI，显示一期东、二期西的相对关系"><figcaption>北朝上地图：珊瑚线为一期轮廓，蓝线为整体裙房。POI 不是塔中心；影像拍摄日期未知。<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" target="_blank" rel="noopener">Esri World Imagery ↗</a> · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors ↗</a></figcaption></figure><figure><img src="references/waterpark-map.webp" loading="lazy" width="1624" height="1220" alt="官方水乐园图，明确区分室内和户外，红紫Teleport Tower属于室内区"><figcaption>官方图：室内与户外分别识别；此图无北箭头。<a href="https://www.studiocity-macau.com/en/attractions/studio-city-water-park" target="_blank" rel="noopener">官方园区图 ↗</a></figcaption></figure></div></details>
-    <div class="source-links"><a href="https://ir.studiocity-macau.com/" target="_blank" rel="noopener">公司投资者关系 · 产品与客房资料 ↗</a><a href="https://www.studiocity-macau.com/sc/attractions/golden-reel" target="_blank" rel="noopener">影汇之星 · 17厢与130米所处高度 ↗</a><a href="https://dataplus.macaotourism.gov.mo/?lang=S" target="_blank" rel="noopener">澳门旅游数据+ ↗</a><a href="https://www.openstreetmap.org/way/389178768" target="_blank" rel="noopener">OpenStreetMap · 一期建筑轮廓 ↗</a><a href="evidence/v2-v3-comparison.png" target="_blank" rel="noopener">V2 / V3 实际模型对比图 ↗</a><a href="VALIDATION.md" target="_blank">交互核验与本机采样记录 ↗</a></div>
+    <details class="reference-gallery"><summary>查看实际核对的建筑照片、官方园区图与北向地图</summary><div class="reference-grid"><figure><img src="references/phase1-front.jpg" loading="lazy" width="2000" height="946" alt="建筑师官方一期照片：宽阔弧形酒店立面与高处竖向8字开孔"><figcaption>一期：中央竖向开孔、窗带和层叠冠部。<a href="https://www.leighorange.com/project/studio-city/" target="_blank" rel="noopener">Leigh &amp; Orange ↗</a></figcaption></figure><figure><img src="references/phase2.jpg" loading="lazy" width="2000" height="946" alt="建筑师官方二期照片：独立玻璃塔、棱面馆体及红紫滑道"><figcaption>二期：独立玻璃塔与棱面裙房。<a href="https://www.leighorange.com/project/studio-city-phase-2/" target="_blank" rel="noopener">Leigh &amp; Orange ↗</a></figcaption></figure><figure><img src="references/north-up-map.png" loading="lazy" width="1600" height="1350" alt="北朝上Esri卫星图叠加OpenStreetMap一期酒店轮廓及POI，显示一期东、二期西的相对关系"><figcaption>北朝上地图：珊瑚线为一期轮廓，蓝线为整体裙房。POI 不是塔中心；影像拍摄日期未知。</figcaption></figure><figure><img src="references/waterpark-map.webp" loading="lazy" width="1624" height="1220" alt="官方水乐园图，明确区分室内和户外，红紫Teleport Tower属于室内区"><figcaption>官方图：室内与户外分别识别；此图无北箭头。<a href="https://www.studiocity-macau.com/en/attractions/studio-city-water-park" target="_blank" rel="noopener">官方园区图 ↗</a></figcaption></figure></div></details>
+    <div class="source-links"><a href="https://ir.studiocity-macau.com/" target="_blank" rel="noopener">公司投资者关系 · 产品与客房资料 ↗</a><a href="https://www.studiocity-macau.com/sc/attractions/golden-reel" target="_blank" rel="noopener">影汇之星 · 17厢与130米所处高度 ↗</a><a href="https://dataplus.macaotourism.gov.mo/?lang=S" target="_blank" rel="noopener">澳门旅游数据+ ↗</a><a href="https://www.openstreetmap.org/way/389178768" target="_blank" rel="noopener">OpenStreetMap · 一期建筑轮廓 ↗</a><a href="#model">查看当前修正版模型 ↑</a><a href="VALIDATION.md" target="_blank">交互核验与本机采样记录 ↗</a></div>
     <details class="runtime-info"><summary>本机运行采样与无障碍选项</summary><p>默认按需绘制。可暂停观景厢演示；系统“减少动态效果”会关闭持续动画并立即切换拆解状态。WebGL 不可用时仍可选择与拆解二维平面图。</p><div class="runtime-actions"><button type="button" id="benchmark">采样5秒渲染节奏</button><button type="button" id="downloadScene">保存当前沙盘图</button><a href="?render=2d#model">查看二维模式 ↗</a></div><img id="sceneExportPreview" alt="当前沙盘实际绘制的导出预览" hidden><output id="runtimeOutput" aria-live="polite">准备读取本机绘制状态。</output><p class="fineprint">rAF 间隔只描述本次浏览器调度；JavaScript 提交耗时不包含 GPU 完成时间，不能代替跨设备帧率保证。</p></details>
   </section>
 </main>
-<footer><a class="footer-brand" href="#top">STUDIO CITY / FAMILY JOURNEY</a><span>非官方课程研究 · V3 · 2026.10</span><a href="#top">回到顶部 ↑</a></footer>
+<footer><a class="footer-brand" href="#top">STUDIO CITY / FAMILY JOURNEY</a><span>课程研究原型 · V3.1 · 2026.10</span><a href="#top">回到顶部 ↑</a></footer>
 </body></html>

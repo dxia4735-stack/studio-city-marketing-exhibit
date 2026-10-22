@@ -20,3 +20,5 @@
 
 #sceneExportPreview{display:block;width:100%;height:auto;margin:18px 0;border:1px solid #bac4d8}
 .plan-part text{font-size:16px}
+
+.trajectory-controls{padding:6px 14px 10px;font-size:11px;color:#536078}.trajectory-controls summary{cursor:pointer}.trajectory-controls>div{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}.trajectory-controls button,.trajectory-controls select{font:inherit;padding:6px 8px;background:white;border:1px solid #b5c4dd}.trajectory-controls input{flex:1;min-width:85px;max-width:260px;accent-color:#2448ff}.trajectory-controls output{min-width:42px}.trajectory-controls p{font-size:10px;line-height:1.8}
