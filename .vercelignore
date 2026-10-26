@@ -2,6 +2,8 @@
 .env*
 .vercel/
 node_modules/
+dist/
+qa/
 *.pem
 *.key
 *.p12
@@ -36,6 +38,5 @@ tmp/
 reel-review*
 geometry-old.js
 preview_server.py
-*.mp4
 *.pptx
 *.docx

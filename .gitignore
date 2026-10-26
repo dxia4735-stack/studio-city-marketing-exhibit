@@ -2,6 +2,10 @@
 .env*
 .vercel/
 node_modules/
+dist/
+qa/
+tmp/
+archive/
 *.pem
 *.key
 *.p12
